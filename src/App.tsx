@@ -6,7 +6,7 @@ import { useQuery } from '@apollo/client';
 import { getFoods } from './Queries/APIQuery';
 
 function App() {
-  const { loading, error, data } = useQuery(getFoods);
+  const { loading, error, data } = useQuery(getFoods,{ fetchPolicy: "no-cache" });
   const handleDataFromChild = (received:any) => {
     console.log('data',received)
   };
